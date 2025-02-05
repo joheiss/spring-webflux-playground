@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: playground
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/trials
+    username: postgres
+    password: password
+  sql:
+    init:
+#      schema-locations: "classpath:sql/schema.sql"
+      data-locations: "classpath:sql/schema.sql"
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: TRACE
+
