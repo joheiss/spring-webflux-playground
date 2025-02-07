@@ -1,6 +1,7 @@
 package com.jovisco.tutorial.webflux.playground;
 
 import io.r2dbc.spi.ConnectionFactory;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 // @EnableWebFlux
 @SpringBootApplication()
 @EnableR2dbcRepositories(basePackages = "com.jovisco.tutorial.webflux.playground")
+// @OpenAPIDefinition
 public class PlaygroundApplication {
 
 	@Bean
