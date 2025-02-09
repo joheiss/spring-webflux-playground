@@ -14,5 +14,5 @@ logging:
   level:
     org:
       springframework:
-        r2dbc: TRACE
+        r2dbc: ERROR
 

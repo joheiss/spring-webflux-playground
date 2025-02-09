@@ -22,7 +22,7 @@ class ProductRepositoryTest extends AbstractTest {
         productRepository.findByPriceBetween(250, 1000)
                 .doOnNext(p -> log.info("Product found: {}", p))
                 .as(StepVerifier::create)
-                .assertNext(p -> assertEquals(1000, p.price()))
+                .assertNext(p -> assertEquals(1000, p.getPrice()))
                 .expectNextCount(5)
                 .expectComplete()
                 .verify();
@@ -34,7 +34,7 @@ class ProductRepositoryTest extends AbstractTest {
         productRepository.findAllBy(PageRequest.of(0, 5).withSort(Sort.Direction.ASC, "price"))
                 .doOnNext(p -> log.info("Product found: {}", p))
                 .as(StepVerifier::create)
-                .assertNext(p -> assertEquals(200, p.price()))
+                .assertNext(p -> assertEquals(200, p.getPrice()))
                 .expectNextCount(4)
                 .expectComplete()
                 .verify();

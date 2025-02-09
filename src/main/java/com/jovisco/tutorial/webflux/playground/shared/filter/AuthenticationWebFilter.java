@@ -23,7 +23,8 @@ public class AuthenticationWebFilter implements WebFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         var path = exchange.getRequest().getURI().getPath();
-        if (path.contains("swagger") || path.contains("api-docs")) {
+        if (path.equals("/")
+        || (path.contains("swagger") || path.contains("api-docs") || path.contains("stream"))) {
             exchange.getAttributes().put("userCategory", UserCategory.STANDARD);
             return chain.filter(exchange);
         }
