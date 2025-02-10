@@ -26,6 +26,7 @@ public class ProductClient {
    public Flux<ProductResponseDto> downloadProducts() {
        return webClient.get()
                .uri("/products/download")
+                .header("Accept-Encoding", "gzip")
                .accept(MediaType.APPLICATION_NDJSON)
                .retrieve()
                .bodyToFlux(ProductResponseDto.class);

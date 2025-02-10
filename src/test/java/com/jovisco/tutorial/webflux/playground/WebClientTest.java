@@ -31,7 +31,7 @@ public class WebClientTest extends AbstractWebClient {
     @Test
     public void testGetProductById() {
         webClient.get()
-                .uri("/lec01/product/1")
+                .uri("demo02/lec01/product/1")
                 .attribute("enable-logging", false)
                 .retrieve()
                 .bodyToMono(ProductResponseDto.class)

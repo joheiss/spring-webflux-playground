@@ -23,7 +23,7 @@ public class ServerSentEventsTest {
     @Test
     public void testServerSentEvents() {
         this.webTestClient.get()
-                .uri("/products/stream/{maxPrice}", 100)
+                .uri("/demo02/products/stream/{maxPrice}", 100)
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .exchange()
                 .expectStatus().isOk()
